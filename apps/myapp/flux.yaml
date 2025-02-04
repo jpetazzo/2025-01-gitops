@@ -17,7 +17,7 @@ spec:
   interval: 1m0s
   targetNamespace: myapp
   values:
-    color: orange
+    fullnameOverride: orange
     image:
       repository: jpetazzo/color
       tag: latest
