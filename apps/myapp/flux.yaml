@@ -17,7 +17,23 @@ spec:
   interval: 1m0s
   targetNamespace: myapp
   values:
-    fullnameOverride: orange
     image:
       repository: jpetazzo/color
       tag: latest
+  valuesFrom:
+  - kind: Secret
+    name: color
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: myapp
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./apps/myapp/manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  targetNamespace: myapp
