@@ -16,3 +16,8 @@ spec:
     createNamespace: true
   interval: 1m0s
   targetNamespace: myapp
+  values:
+    color: orange
+    image:
+      repository: jpetazzo/color
+      tag: latest
