@@ -36,4 +36,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  targetNamespace: myapp
+  targetNamespace: flux-system
